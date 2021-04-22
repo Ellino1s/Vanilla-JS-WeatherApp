@@ -24,7 +24,27 @@ function formatDate(date) {
 
   let day = days[dayIndex];
 
-  return `${day}, ${hours}:${minutes}`;
+  let currentDate = date.getDate();
+
+  let monthIndex = date.getMonth();
+  let months = [
+    "Juniary",
+    "Febriary",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let month = months[monthIndex];
+
+  return `${day}, ${currentDay} ${month}, ${hours}:${minutes}`;
 }
 
 let currentDay = document.querySelector("#current-day");

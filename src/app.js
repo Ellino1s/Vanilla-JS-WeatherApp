@@ -58,7 +58,7 @@ currentDay.innerHTML = formatDate(currentTime);
 
 function showWeather(response) {
   let searchInput = document.querySelector(".card-title");
-  let temperatureElement = document.querySelector("#temperature-value");
+  let temperatureElement = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
 
@@ -69,7 +69,7 @@ function showWeather(response) {
     response.data.weather[0].main;
 
   searchInput.innerHTML = city;
-  temperatureElement.innerHTML = `${temperature}℃`;
+  temperatureElement.innerHTML = temperature;
 }
 
 // Search city

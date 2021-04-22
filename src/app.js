@@ -24,7 +24,7 @@ function formatDate(date) {
 
   let day = days[dayIndex];
 
-  let currentDate = date.getDate();
+  let date = date.getDate();
 
   let monthIndex = date.getMonth();
   let months = [

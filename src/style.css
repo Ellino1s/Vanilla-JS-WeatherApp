@@ -1,0 +1,231 @@
+body {
+  background: linear-gradient(to right, #c755dd 0%, #500764 100%);
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+h1 {
+  padding-top: 15px;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+p {
+  color: #500764;
+  font-weight: 100;
+}
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #500764;
+}
+
+.weather-app {
+  max-width: 95%;
+  margin: 20px auto;
+}
+
+/* Curriant weather card */
+
+.card {
+  margin: 1rem 0;
+  padding: 1.5rem 3rem;
+}
+
+.curriant-day {
+  border-radius: 30px 0 0 30px;
+}
+
+.search {
+  width: 70%;
+  margin-bottom: 20px;
+  margin-top: 0;
+  margin-left: 50px;
+  height: 40px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.search-input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  margin-top: 5px;
+  caret-color: transparent;
+  line-height: 15px;
+  transition: width 0.4s linear;
+}
+
+.search .search-input {
+  padding: 0 10px;
+  width: 100%;
+  caret-color: #a4508b;
+  font-size: 19px;
+  font-weight: 300;
+  color: black;
+  transition: width 0.4s linear;
+}
+
+.search-icon {
+  height: 24px;
+  width: 24px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5f0a87;
+  background-color: #fff;
+  font-size: 15px;
+  bottom: 25px;
+  position: relative;
+}
+
+.header-weather-icon {
+  width: 45%;
+  display: block;
+  margin: 0 auto;
+}
+
+.units {
+  position: relative;
+  top: -1.5rem;
+  font-size: 1.2rem;
+}
+
+.card-body p {
+  margin-top: 1rem;
+  font-size: 25px;
+}
+
+.weather-description,
+.humidity {
+  margin: 2rem;
+}
+
+.weather-icon {
+  width: 20%;
+}
+
+.weather-info {
+  font-size: 20px;
+  padding-left: 1.5rem;
+}
+
+/* Week weather forecast card  */
+
+.week {
+  border-radius: 0 30px 30px 0;
+}
+
+.week h3 {
+  margin: 20px;
+}
+
+.week-forecast {
+  margin: 1rem 0;
+}
+
+.card-days,
+.highlights-card {
+  border-radius: 30px;
+  padding: 1rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.card-days p {
+  font-size: 20px;
+}
+
+.days-info {
+  display: block;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.days-icon {
+  width: 50%;
+}
+
+.week-forecast > div {
+  margin: 0.7rem;
+}
+
+.highlights > div {
+  margin: 1rem;
+}
+
+.highlights p {
+  font-size: 25px;
+}
+
+.highlights-icon {
+  width: 20%;
+}
+
+.highlights-info {
+  font-size: 20px;
+  padding-left: 2rem;
+}
+
+.wind {
+  margin-top: 2.5rem;
+}
+
+.sunset {
+  margin-top: 0.5rem;
+}
+.footer {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+}
+
+.git-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.git-link:hover {
+  cursor: pointer;
+  text-decoration: #c755dd;
+}
+
+@media only screen and (max-width: 768px) {
+  .curriant-day,
+  .week {
+    border-radius: 30px;
+  }
+  .day-highlight,
+  .humidity {
+    text-align: center;
+  }
+}

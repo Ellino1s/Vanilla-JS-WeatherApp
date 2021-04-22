@@ -66,7 +66,7 @@ function showWeather(response) {
     "#humidity"
   ).innerHTML = `${response.data.main.humidity}%`;
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
 
   searchInput.innerHTML = city;
   temperatureElement.innerHTML = temperature;

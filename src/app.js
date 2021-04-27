@@ -52,6 +52,28 @@ let currentTime = new Date();
 
 currentDay.innerHTML = formatDate(currentTime);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card-days col-2">
+        <p class="weather-forecast-date">${day}</p>
+          <img src="images/sun.svg" alt="Weather icon" class="days-icon">
+          <div class="days-info weather-forecast-temperature">
+            <span class="weather-forecast-temp-max">15°</span>
+            <span class="weather-forecast-temp-min">7°</span>
+          </div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // function capitalizeFirstLetter(string) {
 //   return string.charAt(0).toUpperCase() + string.slice(1);
 // }
@@ -90,7 +112,6 @@ function handleSubmit(event) {
 
 let searchCity = document.querySelector(".search");
 searchCity.addEventListener("submit", handleSubmit);
-search("Prague");
 
 // function displayCurrentTemp(response) {
 //   let temperature = Math.round(response.data.main.temp);
@@ -122,6 +143,9 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+search("Prague");
+displayForecast();
 
 // function setToCelsius(event, response) {
 //   event.preventDefault();

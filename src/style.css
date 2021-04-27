@@ -177,6 +177,10 @@ a:hover {
   margin-top: 20px;
 }
 
+.weather-forecast-temp-min {
+  opacity: 0.5;
+}
+
 .days-icon {
   width: 50%;
 }

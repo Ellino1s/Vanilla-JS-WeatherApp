@@ -33,7 +33,7 @@
                     </form>
 
                     <div class="card-body">
-                        <img src="images/cloudy.svg" alt="Weather icon" class="header-weather-icon">
+                        <img src="images/cloudy.svg" alt="Weather icon" id="icon" class="header-weather-icon">
                         <h1 id="current-city" class="card-title">Prague</h1>
                         <div class="temperature">
                             <strong id="temperature"></strong><span class="units">
@@ -45,9 +45,8 @@
                         <hr />
                         <div class="day-highlight">
 
-                            <div class="weather-description">
-                                <img src="images/cloudy.svg" alt="Weather icon" class="weather-icon">
-                                <span id="description" class="weather-info">Mostly cloudy</span>
+                            <div id="description" class="weather-description">
+                                Mostly cloudy
                             </div>
                             <div class="humidity">
                                 <img src="images/humidity.svg" alt="Weather icon" class="weather-icon">
@@ -74,7 +73,7 @@
                             <p>Wind status</p>
                             <div class="wind">
                                 <img src="images/wind.svg" alt="Wind image" class="highlights-icon">
-                                <span class="highlights-info">21 km/h</span>
+                                <span id="wind" class="highlights-info"></span>
                             </div>
                         </div>
 
@@ -82,12 +81,12 @@
                             <p>Sunrise & Sunset</p>
                             <div class="sunset">
                                 <img src="images/sunrise.svg" alt="Sunrise image" class="highlights-icon">
-                                <span class="highlights-info">6:17 AM</span>
+                                <span id="sunrise" class="highlights-info">6:17 AM</span>
                             </div>
 
                             <div class="sunset">
                                 <img src="images/sunset.svg" alt="Sunset image" class="highlights-icon">
-                                <span class="highlights-info">19:46 PM</span>
+                                <span id="sunset" class="highlights-info">19:46 PM</span>
                             </div>
                         </div>
                     </div>

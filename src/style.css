@@ -135,6 +135,19 @@ a:hover {
   margin: 2rem;
 }
 
+.weather-description {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.weather-description::first-letter {
+  text-transform: capitalize;
+}
+
+.humidity {
+  text-align: center;
+}
+
 .weather-icon {
   width: 20%;
 }
@@ -142,7 +155,6 @@ a:hover {
 .weather-info {
   font-size: 20px;
   padding-left: 1.5rem;
-  text-transform: capitalize;
 }
 
 /* Week weather forecast card  */
@@ -185,8 +197,8 @@ a:hover {
   width: 50%;
 }
 
-.row > div {
-  margin: 0.7rem;
+.forecast > div {
+  margin: 0.5rem;
 }
 
 .highlights > div {
@@ -202,8 +214,8 @@ a:hover {
 }
 
 .highlights-info {
-  font-size: 20px;
-  padding-left: 2rem;
+  font-size: 18px;
+  padding-left: 1rem;
 }
 
 .wind {

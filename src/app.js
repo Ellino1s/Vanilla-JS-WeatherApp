@@ -56,7 +56,7 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Wed", "Thu", "Fri"];
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="forecast row">`;
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -74,34 +74,68 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-// function capitalizeFirstLetter(string) {
-//   return string.charAt(0).toUpperCase() + string.slice(1);
-// }
+function formatHoursSunrise(timestamp) {
+  let time = new Date(timestamp);
+  let hours = time.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-function showWeather(response) {
+  return `${hours}:${minutes} AM`;
+}
+
+function formatHoursSunset(timestamp) {
+  let time = new Date(timestamp);
+  let hours = time.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes} PM`;
+}
+
+function displayTemperature(response) {
   let searchInput = document.querySelector(".card-title");
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = Math.round(response.data.main.temp);
-  let city = response.data.name;
+  let cityElement = document.querySelector("#current-city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset");
+  let iconElement = document.querySelector("#icon");
 
-  document.querySelector(
-    "#humidity"
-  ).innerHTML = `${response.data.main.humidity}%`;
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].description;
-
-  searchInput.innerHTML = city;
-  temperatureElement.innerHTML = temperature;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = `${response.data.main.humidity}%`;
+  cityElement.innerHTML = response.data.name;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  sunriseElement.innerHTML = formatHoursSunrise(
+    response.data.sys.sunrise * 1000
+  );
+  sunsetElement.innerHTML = formatHoursSunset(response.data.sys.sunset * 1000);
+  iconElement.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.svg`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 // Search city
 function search(city) {
   let apiKey = "abb718efb6610d827a11186939f62b73";
-
   let units = "metric";
-
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(url).then(showWeather);
+  axios.get(url).then(displayTemperature);
 }
 
 function handleSubmit(event) {
@@ -113,55 +147,5 @@ function handleSubmit(event) {
 let searchCity = document.querySelector(".search");
 searchCity.addEventListener("submit", handleSubmit);
 
-// function displayCurrentTemp(response) {
-//   let temperature = Math.round(response.data.main.temp);
-//   let cityElement = response.data.name;
-
-//   let currentCity = document.querySelector("#current-city");
-//   let currentTemperature = document.querySelector("#temperature-value");
-
-//   console.log(response.data);
-
-//   currentCity.innerHTML = cityElement;
-//   currentTemperature.innerHTML = `${temperature}℃`;
-// }
-
-function showCurrentLocation(position) {
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-
-  let apiKey = "f9b06f3baaa6db7423d401dc6531fd6a";
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-
-  axios.get(url).then(showWeather);
-}
-
-function getCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(showCurrentLocation);
-}
-
-let currentLocationButton = document.querySelector("#current-location");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
 search("Prague");
 displayForecast();
-
-// function setToCelsius(event, response) {
-//   event.preventDefault();
-//   let city = document.querySelector(".card-title");
-//   let currentTemperature = document.querySelector("#temperature-value");
-
-//   currentTemperature.innerHTML = Math.round(response.data.main.temp);
-// }
-// let celsius = document.querySelector("#celsius");
-// celsius.addEventListener("click", setToCelsius);
-
-// function setToFahrenheit(event) {
-//   event.preventDefault();
-//   let currentTemperature = document.querySelector("#temperature-value");
-//   let calculated = Math.round((currentTemperature.innerHTML * 9) / 5 + 32);
-//   currentTemperature.innerHTML = calculated;
-// }
-// let fahrenheit = document.querySelector("#fahrenheit");
-// fahrenheit.addEventListener("click", setToFahrenheit);

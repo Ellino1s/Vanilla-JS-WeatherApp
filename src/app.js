@@ -44,7 +44,7 @@ function formatDate(date) {
 
   let month = months[monthIndex];
 
-  return `${day}, ${today} ${month}, ${hours}:${minutes}`;
+  return `${day}, ${today} ${month} ${hours}:${minutes}`;
 }
 
 let currentDay = document.querySelector("#current-day");

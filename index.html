@@ -21,36 +21,27 @@
         <div class="weather-app">
             <div class="row">
                 <div class="card curriant-day text-dark bg-light mb-3 col-lg-4">
-                    <!-- style="max-width: 28rem;" -->
                     <form class="search">
                         <input type="text" class="search-input" id="search-city" placeholder="Search your city">
                         <button class="search-icon" type="submit">
                             <i class="fa fa-search"></i>
                         </button>
-                        <button id="current-location" class="search-icon" type="submit">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </button>
                     </form>
 
                     <div class="card-body">
                         <img src="images/03d.svg" alt="Weather icon" id="icon" class="header-weather-icon">
-                        <h1 id="current-city" class="card-title">Prague</h1>
+                        <h1 id="current-city" class="card-title"></h1>
                         <div class="temperature">
-                            <strong id="temperature"></strong><span class="units">
-                                ℃ |
-                                <a href="#" id="fahrenheit">℉</a>
-                            </span>
+                            <strong id="temperature"></strong><span class="units">℃</span>
                         </div>
-                        <p id="current-day">Thursday, 8 April</p>
+                        <p id="current-day"></p>
                         <hr />
                         <div class="day-highlight">
 
-                            <div id="description" class="weather-description">
-                                Mostly cloudy
-                            </div>
+                            <div id="description" class="weather-description"></div>
                             <div class="humidity">
                                 <img src="images/humidity.svg" alt="Weather icon" class="weather-icon">
-                                <span id="humidity" class="weather-info">40%</span>
+                                <span id="humidity" class="weather-info"></span>
                             </div>
                         </div>
 
@@ -81,12 +72,12 @@
                             <p>Sunrise & Sunset</p>
                             <div class="sunset">
                                 <img src="images/sunrise.svg" alt="Sunrise image" class="highlights-icon">
-                                <span id="sunrise" class="highlights-info">6:17 AM</span>
+                                <span id="sunrise" class="highlights-info"></span>
                             </div>
 
                             <div class="sunset">
                                 <img src="images/sunset.svg" alt="Sunset image" class="highlights-icon">
-                                <span id="sunset" class="highlights-info">19:46 PM</span>
+                                <span id="sunset" class="highlights-info"></span>
                             </div>
                         </div>
                     </div>

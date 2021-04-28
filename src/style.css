@@ -28,7 +28,7 @@ p {
 }
 
 strong {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-top: 1rem;
 }
 
@@ -121,8 +121,8 @@ a:hover {
 
 .units {
   position: relative;
-  top: -1.5rem;
-  font-size: 1.2rem;
+  top: -1.8rem;
+  font-size: 1.5rem;
 }
 
 .card-body p {

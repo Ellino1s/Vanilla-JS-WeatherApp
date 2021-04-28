@@ -180,12 +180,12 @@ a:hover {
 }
 
 .card-days p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .days-info {
   display: block;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 20px;
 }
 
@@ -198,7 +198,7 @@ a:hover {
 }
 
 .forecast > div {
-  margin: 0.5rem;
+  margin: 0.7rem;
 }
 
 .highlights > div {

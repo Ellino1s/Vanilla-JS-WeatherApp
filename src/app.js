@@ -52,7 +52,7 @@ let currentTime = new Date();
 
 currentDay.innerHTML = formatDate(currentTime);
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Wed", "Thu", "Fri"];
@@ -102,6 +102,13 @@ function formatHoursSunset(timestamp) {
   return `${hours}:${minutes} PM`;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "abb718efb6610d827a11186939f62b73";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayTemperature(response) {
   let searchInput = document.querySelector(".card-title");
   let temperatureElement = document.querySelector("#temperature");
@@ -128,6 +135,8 @@ function displayTemperature(response) {
     `images/${response.data.weather[0].icon}.svg`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 // Search city
@@ -148,4 +157,3 @@ let searchCity = document.querySelector(".search");
 searchCity.addEventListener("submit", handleSubmit);
 
 search("Prague");
-displayForecast();

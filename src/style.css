@@ -2,6 +2,8 @@ body {
   background: linear-gradient(to right, #c755dd 0%, #500764 100%);
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -252,5 +254,12 @@ a:hover {
   .day-highlight,
   .humidity {
     text-align: center;
+  }
+  .forecast > div {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  .highlights > div {
+    margin: 0.5rem 0 0.5rem 0;
   }
 }
